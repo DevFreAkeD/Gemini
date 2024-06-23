@@ -1,19 +1,19 @@
 <template>
-  <div class="app-container">
-    Hello World
+  <div class="bg-gray-200 min-h-screen flex flex-row">
+    <Sidebar />
   </div>
 </template>
 
 <script>
+import Sidebar from './components/Sidebar.vue';
 
 export default {
   components: {
+    Sidebar,
   }
 }
 </script>
 
 <style>
-.app-container {
-  @apply bg-gray-100 min-h-screen flex flex-col;
-}
+
 </style>
