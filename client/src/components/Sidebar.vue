@@ -14,7 +14,7 @@
                 <p class="mt-10 pb-2 mt-30 text-gray-500">Recent</p>
                 <div class="flex items-start gap-10 p-3 pr-20 rounded-full text-gray-800 cursor-pointer hover:bg-gray-500">
                     <img :src="messageIcon" alt="message" class="h-6 w-6" />
-                    <p class="text-gray-500">Chat</p>
+                    <p class="text-gray-500 hover:text-gray-800">Chat</p>
                 </div>
             </div>
         </div>
