@@ -12,27 +12,19 @@
         <p class="text-zinc-700">How Can I Help You Today?</p>
       </div>
       <div class="grid grid-cols-[repeat(auto-fill,_minmax(180px,_1fr))] gap-4">
-        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700"
-          Suggest Some Place To Visit In Kerala
-        >
+        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700">
           <p class="text-gray-200 text-[17px]">Suggest Some Place To Visit In Summers</p>
           <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
         </div>
-        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700"
-          Brainstorm team bonding activities for our work retreat.
-        >
+        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700">
           <p class="text-gray-200 text-[17px]">Draft a roadmap to learn DSA?</p>
           <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
         </div>
-        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700"
-          How to Create a Gyroscope using Disc.
-        >
+        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700">
           <p class="text-gray-200 text-[17px]">How to Create a Discord Bot?</p>
           <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
         </div>
-        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700"
-          Create a Script for the youtube video about coding.
-        >
+        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700">
           <p class="text-gray-200 text-[17px]">Create a Script for the youtube video about coding</p>
           <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
         </div>
