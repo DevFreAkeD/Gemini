@@ -1,17 +1,17 @@
 <template>
-    <div class="sidebar bg-gray-900">
-        <div class="mt-3.5">
+    <div class="sidebar bg-zinc-900">
+        <div class="mt-4">
             <img
                 :src="menuIcon"
                 @click="toggleExtended"
-                class="ml-2.5 h-6 w-6 cursor-pointer"
+                class="ml-2.5 h-5 w-5 cursor-pointer"
             />
-            <div class="mt-10 flex items-center gap-2 px-2 py-2 hover:bg-slate-800 rounded-full text-sm text-gray-500 cursor-pointer">
+            <div class="mt-10 flex items-center gap-10 px-2 py-2 hover:bg-slate-800 rounded-full text-sm text-gray-500 cursor-pointer">
                 <img :src="newChatIcon" alt="new-chat" class="w-5 h-7" />
                 <p v-if="extended">New Chat</p>
             </div>
             <div v-if="extended" class="recent flex flex-col animate-fadeIn">
-                <p class="recent-title pt-10 mt-30 text-gray-500">Recent</p>
+                <p class="mt-10 pb-2 mt-30 text-gray-500">Recent</p>
                 <div class="flex items-start gap-10 p-3 pr-20 rounded-full text-gray-800 cursor-pointer hover:bg-gray-500">
                     <img :src="messageIcon" alt="message" class="h-6 w-6" />
                     <p class="text-gray-500">Chat</p>
