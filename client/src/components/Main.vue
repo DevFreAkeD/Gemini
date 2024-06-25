@@ -1,7 +1,7 @@
 <template>
   <div class="bg-zinc-950 flex-1 min-h-screen pb-[15vh] relative">
     <div class="flex items-center justify-between text-[22px] p-5 text-gray-300">
-      <p class="h1 text-[22px]">Gemini</p>
+      <p class="h1 text-[20px]">Gemini</p>
       <img src="" alt="" class="w-10 rounded-full" />
     </div>
     <div class="max-w-[900px] mx-auto">
@@ -19,23 +19,42 @@
           <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
         </div>
         <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700"
-            Brainstorm team bonding activities for our work retreat.
+          Brainstorm team bonding activities for our work retreat.
         >
-            <p class="text-gray-200 text-[17px]">Draft a roadmap to learn DSA?</p>
-            <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
-          </div>
-          <div
-            class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700"
-            How to Create a Gyroscope using Disc.
-          >
-            <p class="text-gray-200 text-[17px]">How to Create a Discord Bot?</p>
-            <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
-          </div>
+          <p class="text-gray-200 text-[17px]">Draft a roadmap to learn DSA?</p>
+          <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
+        </div>
         <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700"
-            Create a Script for the youtube video about coding.
+          How to Create a Gyroscope using Disc.
+        >
+          <p class="text-gray-200 text-[17px]">How to Create a Discord Bot?</p>
+          <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
+        </div>
+        <div class="h-[200px] p-4 bg-zinc-800 rounded-lg relative cursor-pointer hover:bg-zinc-700"
+          Create a Script for the youtube video about coding.
         >
           <p class="text-gray-200 text-[17px]">Create a Script for the youtube video about coding</p>
           <img src="" alt="" class="w-9 p-1 absolute bottom-2 right-2 rounded-full" />
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 w-full max-w-[900px] px-5 py-5 mx-auto">
+        <div class="flex items-center justify-between gap-5 bg-zinc-800 p-2.5 rounded-full">
+          <input
+            input=""
+            value=""
+            type="text"
+            placeholder="Enter the Prompt Here"
+            class="flex-1 text-gray-200 bg-transparent border-0 outline-0 p-2 text-[16px]"
+          />
+          <div class="flex items-center gap-4">
+            <img src="" alt="" class="w-6 cursor-pointer" />
+            <img src="" alt="" class="w-6 cursor-pointer" />
+            <img src="" alt="" class="w-6 cursor-pointer" />
+          </div>
+        </div>
+        <div class="text-[13px] mt-3 text-center font-light">
+          <p class="text-white">Gemini may display inaccurate info, including about people, so double-check its responses. Your privacy & Gemini Apps</p>
         </div>
       </div>
     </div>
