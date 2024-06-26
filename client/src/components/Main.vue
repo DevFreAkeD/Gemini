@@ -1,7 +1,7 @@
 <template>
   <div class="bg-zinc-950 flex-1 min-h-screen pb-[15vh] relative">
     <div class="flex items-center justify-between text-[22px] p-5 text-gray-300">
-      <p class="h1 text-[20px] sm:text-[18px]">Gemini</p>
+      <p class="h1 text-[21px]">Gemini</p>
       <img src="" alt="" class="w-10 sm:w-8 rounded-full" />
     </div>
     <div class="max-w-[900px] mx-auto sm:px-2">
