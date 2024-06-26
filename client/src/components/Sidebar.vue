@@ -4,10 +4,10 @@
             <img
                 :src="menuIcon"
                 @click="toggleExtended"
-                class="ml-2.5 h-5 w-5 cursor-pointer"
+                class="ml-2.5 h-6 w-6 cursor-pointer"
             />
             <div class="mt-10 flex items-center gap-10 px-2 py-2 hover:bg-slate-800 rounded-full text-sm text-gray-500 cursor-pointer">
-                <img :src="newChatIcon" alt="new-chat" class="w-5 h-7" />
+                <img :src="newChatIcon" alt="new-chat" class="w-6 h-6" />
                 <p v-if="extended">New Chat</p>
             </div>
             <div v-if="extended" class="recent flex flex-col animate-fadeIn">
