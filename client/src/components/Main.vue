@@ -5,7 +5,7 @@
       <img src="" alt="" class="w-10 rounded-full" />
     </div>
     <div class="max-w-[900px] mx-auto">
-      <div class="my-12 text-[56px] text-[#c4c7c5] font-medium">
+      <div class="my-12 text-[56px] text-white font-medium">
         <p>
           <span class="bg-gradient-to-r from-[#4b90ff] to-[#ff5546] bg-clip-text text-transparent">Hello , Developer. </span>
         </p>
@@ -55,6 +55,7 @@
 
 <script>
 import { micIcon, sendIcon, codeIcon, imgIcon } from "../assets";
+
   export default {
     setup() {
       return { micIcon, sendIcon, codeIcon, imgIcon };
