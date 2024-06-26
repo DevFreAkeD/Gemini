@@ -10,6 +10,16 @@
                 </svg>
             </a>
         </div>
+        <div class="bg-zinc-950 flex flex-col items-center justify-center w-full px-52 py-32">
+            <h1 class="text-[60px] text-white font-medium">
+                <span class="bg-gradient-to-r from-[#4b90ff] to-[#ff5546] bg-clip-text text-transparent">Gemini</span>
+            </h1>
+            <div class="my-6 text-center">
+                <p class="text-zinc-600 text-[26px]">Your one-stop shop for information. Ask in-depth questions, get creative writing assistance, or bridge language barriers – all powered by cutting-edge AI.</p>
+                <br />
+                <p class="text-zinc-600 text-[26px]">Unleash your potential and explore a world of knowledge. Let's get started!</p>
+            </div>
+        </div>
     </div>
 </template>
 <script>
