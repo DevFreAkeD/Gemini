@@ -40,9 +40,9 @@
             class="flex-1 text-gray-200 bg-transparent border-0 outline-0 p-2 text-[16px]"
           />
           <div class="flex items-center gap-4">
-            <img src="" alt="" class="w-6 cursor-pointer" />
-            <img src="" alt="" class="w-6 cursor-pointer" />
-            <img src="" alt="" class="w-6 cursor-pointer" />
+            <img :src={imgIcon} alt="imgIcon" class="w-6 cursor-pointer" />
+            <img :src={micIcon} alt="micIcon" class="w-6 cursor-pointer" />
+            <img :src={sendIcon} alt="sendIcon" class="w-6 cursor-pointer" />
           </div>
         </div>
         <div class="text-[13px] mt-3 text-center font-light">
@@ -54,8 +54,10 @@
 </template>           
 
 <script>
+import { micIcon, sendIcon, codeIcon, imgIcon } from "../assets";
   export default {
     setup() {
+      return { micIcon, sendIcon, codeIcon, imgIcon };
     }
 };
 </script>
