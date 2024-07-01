@@ -3,6 +3,7 @@ import cors from 'cors';
 import * as dotenv from 'dotenv';
 import connectDB from './mongodb/connect.js';
 import authRoutes from './routes/auth.js';
+import chatRoutes from './routes/gemini.js';
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/auth', authRoutes);
+app.use('/gemini', chatRoutes);
 
 app.get('/', async (req, res) => {
     res.send('Hello from Gemini!');
