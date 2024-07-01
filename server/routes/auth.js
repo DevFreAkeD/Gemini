@@ -1,6 +1,9 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../mongodb/models/User.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const router = express.Router();
 const jwtSecret = process.env.JWT_SECRET;
