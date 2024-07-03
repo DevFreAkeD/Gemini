@@ -16,7 +16,7 @@
                 </form>
                 <p class="text-white pt-2 text-[16px]">Not Registered?
                    <router-link to="/auth/register" class="underline">
-                      Sign Up
+                      Register
                    </router-link>
                 </p>
             </div>
