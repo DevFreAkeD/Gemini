@@ -29,6 +29,14 @@
         password: ''
       };
     },
+    created() {
+    // Check if token exists in localStorage
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Redirect to Gemini page if token exists
+      this.$router.push('/gemini');
+    }
+    },
     methods: {
       async loginUser() {
         try {
