@@ -16,13 +16,13 @@ const routes = [
     component: Gemini,
   },
   {
-    path: '/auth/signin',
-    name: 'SignIn',
+    path: '/auth/login',
+    name: 'Login',
     component: Login,
   },
   {
-    path: '/auth/signup',
-    name: 'SignUp',
+    path: '/auth/register',
+    name: 'Register',
     component: SignUp,
   },
 ];
