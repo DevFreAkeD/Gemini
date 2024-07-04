@@ -3,14 +3,20 @@
     <!-- Top bar with Gemini title and Profile icon -->
     <div class="flex items-center justify-between p-5 text-gray-300">
       <p class="h1 text-[21px]">Gemini</p>
-      <img @click="toggleProfileBox" :src="userIcon" alt="Profile Icon" class="h-6 w-6 cursor-pointer" />
+      <img @click="toggleProfileBox" :src="userIcon" alt="User Icon" class="h-6 w-6 cursor-pointer" />
     </div>
 
     <!-- Profile options box -->
-    <div v-if="showProfileBox" class="absolute top-[50px] right-[10px] bg-zinc-800 m-2 p-2 w-36 rounded-lg shadow-lg">
-      <ul class="text-gray-200">
-        <li class="py-1 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">Profile</li>
-        <li class="py-1 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">Logout</li>
+    <div v-if="showProfileBox" class="absolute top-[50px] right-[10px] bg-zinc-800 m-2 p-2 w-44 rounded-lg shadow-lg">
+      <ul class="text-white">
+        <li @click="handleProfileClick" class="flex gap-3 py-2 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">
+          <img :src="profileIcon" alt="Profile Icon" class="w-5 h-5"/>
+          Profile
+        </li>
+        <li @click="handleLogoutClick" class="flex gap-3 py-2 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">
+          <img :src="logoutIcon" alt="Logout Icon" class="w-5 h-5"/>
+          Logout
+        </li>
       </ul>
     </div>
 
@@ -84,7 +90,7 @@
 </template>
 
 <script>
-import { micIcon, sendIcon, imgIcon, geminiIcon, userIcon } from '../assets';
+import { micIcon, sendIcon, imgIcon, geminiIcon, userIcon, profileIcon, logoutIcon } from '../assets';
 import axios from 'axios';
 
 export default {
@@ -97,6 +103,8 @@ export default {
       imgIcon,
       userIcon,
       geminiIcon,
+      profileIcon,
+      logoutIcon,
       hideChatCards: false,
       showProfileBox: false,
     };
