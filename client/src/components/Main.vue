@@ -1,8 +1,20 @@
 <template>
-  <div class="bg-zinc-950 flex-1 mix-h-screen pb-[15vh] relative">
+  <div class="bg-zinc-950 flex-1 min-h-screen pb-[15vh] relative">
+    <!-- Top bar with Gemini title and Profile icon -->
     <div class="flex items-center justify-between p-5 text-gray-300">
       <p class="h1 text-[21px]">Gemini</p>
+      <img @click="toggleProfileBox" :src="userIcon" alt="Profile Icon" class="h-6 w-6 cursor-pointer" />
     </div>
+
+    <!-- Profile options box -->
+    <div v-if="showProfileBox" class="absolute top-[50px] right-[10px] bg-zinc-800 m-2 p-2 w-36 rounded-lg shadow-lg">
+      <ul class="text-gray-200">
+        <li class="py-1 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">Profile</li>
+        <li class="py-1 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">Logout</li>
+      </ul>
+    </div>
+
+    <!-- Chat Cards or Hello Message -->
     <div class="max-w-[900px] mx-auto sm:px-2">
       <div v-if="!hideChatCards">
         <div class="px-4 my-12 text-[56px] sm:text-[42px] text-white font-medium">
@@ -86,6 +98,7 @@ export default {
       userIcon,
       geminiIcon,
       hideChatCards: false,
+      showProfileBox: false,
     };
   },
   methods: {
@@ -120,6 +133,9 @@ export default {
     GenerateResponse() {
       this.sendPrompt();
       this.hideChatCards = true;
+    },
+    toggleProfileBox() {
+      this.showProfileBox = !this.showProfileBox;
     },
   },
 };
