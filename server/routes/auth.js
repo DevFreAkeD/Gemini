@@ -9,10 +9,10 @@ const router = express.Router();
 const jwtSecret = process.env.JWT_SECRET;
 
 router.post('/register', async (req, res) => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
 
   try {
-    const user = new User({ email, password });
+    const user = new User({ name, email, password });
     await user.save();
     res.status(201).send('User Registered!');
   } catch (err) {
