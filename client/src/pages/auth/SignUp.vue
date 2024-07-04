@@ -90,7 +90,7 @@ export default {
                     alert('Registration successful! Redirecting to Gemini...');
                     setTimeout(() => {
                         this.$router.push('/gemini');
-                    }, 5000);
+                    }, 3000);
                 } else {
                     alert('An unexpected error occurred. Please try again later.');
                 }
