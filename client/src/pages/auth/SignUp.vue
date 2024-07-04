@@ -10,7 +10,7 @@
         <div class="bg-zinc-900 flex flex-col items-center justify-center px-2 py-5 border-[3px] rounded-md border-zinc-700 lg:w-[50rem] sm:w-[30rem]">
           <h3 class="text-white text-[24px]">Register</h3>
           <form class="flex flex-col items-center w-full px-3 pt-5 gap-4 h-1/2" @submit.prevent="register">
-            <input v-model="name" type="text" placeholder="Full Name" class="w-full mb-4 p-4 text-zinc-900 rounded-md" />
+            <input v-model="name" type="text" placeholder="Name" class="w-full mb-4 p-4 text-zinc-900 rounded-md" />
             <input v-model="email" type="email" placeholder="Email" class="w-full mb-4 p-4 text-zinc-900 rounded-md" />
             <div class="w-full mb-4 relative">
               <input :type="passwordFieldType" v-model="password" placeholder="Password" class="w-full p-4 text-zinc-900 rounded-md" />
@@ -24,7 +24,7 @@
                 </svg>
               </button>
             </div>
-            <button type="submit" class="bg-gradient-to-r from-[#4b90ff] to-[#ff5546] text-zinc-900 font-medium text-sm w-36 px-5 py-2.5 text-center rounded-full text-nowrap min-h-button flex items-center justify-center">Create Account</button>
+            <button type="submit" class="bg-gradient-to-r from-[#4b90ff] to-[#ff5546] text-zinc-900 font-medium text-sm w-36 px-5 py-2.5 text-center rounded-full text-nowrap min-h-button flex items-center justify-center">Register</button>
           </form>
           <p class="text-white pt-2 text-[16px]">Already Registered?
             <router-link to="/auth/login" class="underline">
@@ -48,44 +48,64 @@
         passwordFieldType: 'password'
       };
     },
-    methods: {
-      togglePassword() {
-        this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
-      },
-      async register() {
-        try {
-          const response = await axios.post('http://localhost:8080/auth/register', {
-            name: this.name,
-            email: this.email,
-            password: this.password
-          });
-  
-          if (response.status === 201) {
-            const token = response.data.token;
-            localStorage.setItem('token', token);
-            alert('Registration successful!');
-            this.$router.push('/gemini');
-          } else {
-            alert('An unexpected error occurred. Please try again later.');
-          }
-        } catch (error) {
-          if (error.response) {
-            if (error.response.status === 400) {
-              alert('Invalid registration details.');
-            } else if (error.response.status === 409) {
-              alert('Email already registered.');
-            } else {
-              alert('An error occurred. Please try again later.');
-            }
-          } else {
-            alert('An error occurred. Please try again later.');
-          }
-        }
+    created() {
+      const token = localStorage.getItem('token');
+      if (token) {
+        this.$router.push('/gemini');
       }
+    },
+    methods: {
+        togglePassword() {
+            this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+        },
+        async register() {
+            if (!this.name.trim()) {
+                alert('Enter Name.');
+                return;
+             }
+            if (!this.email.trim()) {
+                alert('Email is required.');
+                return;
+            }
+            if (!this.password.trim()) {
+                alert('Password is required.');
+                return;
+            }
+
+            try {
+                const response = await axios.post('http://localhost:8080/auth/register', {
+                name: this.name,
+                email: this.email,
+                password: this.password
+                });
+
+                if (response.status === 201) {
+                const token = response.data.token;
+                localStorage.setItem('token', token);
+                alert('Registration successful! Redirecting to Gemini...');
+                setTimeout(() => {
+                    this.$router.push('/gemini');
+                }, 5000);
+                } else {
+                alert('An unexpected error occurred. Please try again later.');
+                }
+            } catch (error) {
+                if (error.response) {
+                if (error.response.status === 400) {
+                    alert('Invalid registration details.');
+                } else if (error.response.status === 409) {
+                    alert('Email already registered.');
+                } else {
+                    alert('An error occurred. Please try again later.');
+                }
+                } else {
+                alert('An error occurred. Please try again later.');
+                }
+            }
+        }
     }
   };
   </script>
   
   <style>
   </style>
-  
