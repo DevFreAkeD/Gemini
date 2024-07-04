@@ -3,6 +3,7 @@ import Home from "../pages/Home.vue";
 import Gemini from "../pages/Gemini.vue";
 import Login from "../pages/auth/SignIn.vue";
 import SignUp from "../pages/auth/SignUp.vue";
+import Profile from '../pages/Profile.vue';
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/auth/register',
     name: 'Register',
     component: SignUp,
+  },
+  {
+    path: '/user/profile',
+    name: 'Profile',
+    component: Profile,
   },
 ];
 
