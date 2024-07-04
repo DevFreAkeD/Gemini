@@ -27,4 +27,4 @@ app.get('/', async (req, res) => {
     }
   };
   
-  startServer();
+startServer();
