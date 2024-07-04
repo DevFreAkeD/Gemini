@@ -64,11 +64,11 @@
 
           if (response.status === 200) {
             const token = response.data.token;
-            // Optionally, store token securely (e.g., in localStorage)
             localStorage.setItem('token', token);
             alert('Login successful!');
-            // Optionally, redirect to another page upon successful login
-            this.$router.push('/gemini');
+            setTimeout(() => {
+              this.$router.push('/gemini');
+            }, 3000);
           } else {
             alert('An unexpected error occurred. Please try again later.');
           }
@@ -78,6 +78,8 @@
               alert('Incorrect password.');
             } else if (error.response.status === 404) {
               alert('Email not registered.');
+            } else if (error.response.status === 400) {
+              alert('Invalid credentials!');
             } else {
               alert('An error occurred. Please try again later.');
             }
