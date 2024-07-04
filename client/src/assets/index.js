@@ -11,6 +11,8 @@ import codeIcon from "../assets/code_icon.png"
 import imgIcon from "../assets/gallary_icon.png"
 import userIcon from "../assets/user_icon.png"
 import geminiIcon from "../assets/gemini_icon.png"
+import profileIcon from "../assets/profileicon.svg"
+import logoutIcon from "../assets/logouticon.svg"
 
 export {
 	menuIcon,
@@ -26,4 +28,6 @@ export {
 	imgIcon,
 	geminiIcon,
 	userIcon,
+	profileIcon,
+	logoutIcon
 };
