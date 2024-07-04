@@ -34,12 +34,12 @@
         </div>
       </div>
     </div>
-  </template>
+</template>
   
-  <script>
-  import axios from 'axios';
+<script>
+import axios from 'axios';
   
-  export default {
+export default {
     data() {
       return {
         name: '',
@@ -71,6 +71,11 @@
                 alert('Password is required.');
                 return;
             }
+            const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{"':;?/>.<,])(?=.*[a-zA-Z]).{8,}$/;
+            if (!passwordRegex.test(this.password)) {
+                alert('Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
+                return;
+            }
 
             try {
                 const response = await axios.post('http://localhost:8080/auth/register', {
@@ -80,32 +85,36 @@
                 });
 
                 if (response.status === 201) {
-                const token = response.data.token;
-                localStorage.setItem('token', token);
-                alert('Registration successful! Redirecting to Gemini...');
-                setTimeout(() => {
-                    this.$router.push('/gemini');
-                }, 5000);
+                    const token = response.data.token;
+                    localStorage.setItem('token', token);
+                    alert('Registration successful! Redirecting to Gemini...');
+                    setTimeout(() => {
+                        this.$router.push('/gemini');
+                    }, 5000);
                 } else {
-                alert('An unexpected error occurred. Please try again later.');
+                    alert('An unexpected error occurred. Please try again later.');
                 }
             } catch (error) {
                 if (error.response) {
-                if (error.response.status === 400) {
-                    alert('Invalid registration details.');
-                } else if (error.response.status === 409) {
-                    alert('Email already registered.');
-                } else {
-                    alert('An error occurred. Please try again later.');
-                }
+                    if (error.response.status === 400) {
+                        if (error.response.data && error.response.data.message) {
+                            alert(error.response.data.message);
+                        } else {
+                            alert('Invalid registration details.');
+                        }
+                    } else if (error.response.status === 409) {
+                        alert('Email already registered.');
+                    } else {
+                        alert('An error occurred. Please try again later.');
+                    }
                 } else {
                 alert('An error occurred. Please try again later.');
                 }
             }
         }
     }
-  };
-  </script>
+};
+</script>
   
-  <style>
-  </style>
+<style>
+</style>
