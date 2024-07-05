@@ -13,7 +13,7 @@
           <img :src="profileIcon" alt="Profile Icon" class="w-5 h-5"/>
           Profile
         </li>
-        <li @click="handleLogoutClick" class="flex gap-3 py-2 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">
+        <li @click="logout" class="flex gap-3 py-2 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">
           <img :src="logoutIcon" alt="Logout Icon" class="w-5 h-5"/>
           Logout
         </li>
@@ -107,7 +107,11 @@ export default {
       logoutIcon,
       hideChatCards: false,
       showProfileBox: false,
+      isLoggedIn: false
     };
+  },
+  created() {
+    this.checkAuthentication();
   },
   methods: {
     async sendPrompt() {
@@ -145,6 +149,20 @@ export default {
     toggleProfileBox() {
       this.showProfileBox = !this.showProfileBox;
     },
+    checkAuthentication() {
+      const token = localStorage.getItem('token'); // Assuming you store token in localStorage
+        if (token) {
+          this.isLoggedIn = true;
+        } else {
+          this.isLoggedIn = false;
+      }
+    },
+    logout() {
+      localStorage.removeItem('token'); // Remove token from localStorage
+        this.isLoggedIn = false; // Update isLoggedIn state
+        // Optionally, redirect user to login page after logout
+      this.$router.push('/');
+    }
   },
 };
 </script>
