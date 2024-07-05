@@ -7,14 +7,19 @@
     </div>
 
     <!-- Profile options box -->
-    <div v-if="showProfileBox" class="absolute top-[50px] right-[10px] bg-zinc-800 m-2 p-2 w-44 rounded-lg shadow-lg">
+    <div v-if="showProfileBox" class="absolute top-[50px] right-[10px] bg-zinc-800 m-2 p-2 w-auto rounded-lg shadow-lg">
       <ul class="text-white">
-        <li @click="handleProfileClick" class="flex gap-3 py-2 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">
-          <img :src="profileIcon" alt="Profile Icon" class="w-5 h-5"/>
-          Profile
+        <li class="flex gap-4 py-2 px-3">
+          <img :src="profileIcon" alt="Profile Icon" class="w-5 h-5 mt-1"/>
+          <div>
+            <p class="font-medium">{{ userProfile.name }}</p>
+            <p>{{ userProfile.email }}</p>
+            <router-link to="/user/profile" class="text-gray-400 hover:text-gray-200 hover:underline">Visit Profile</router-link>
+          </div>
         </li>
-        <li @click="logout" class="flex gap-3 py-2 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">
-          <img :src="logoutIcon" alt="Logout Icon" class="w-5 h-5"/>
+        <hr class="border-gray-600 my-2">
+        <li @click="logout" class="flex items-center gap-3 py-2 px-3 cursor-pointer hover:bg-zinc-700 rounded-md">
+          <img :src="logoutIcon" alt="Logout Icon" class="w-5 h-5 mt-1"/>
           Logout
         </li>
       </ul>
@@ -107,7 +112,12 @@ export default {
       logoutIcon,
       hideChatCards: false,
       showProfileBox: false,
-      isLoggedIn: false
+      isLoggedIn: false,
+      userProfile: {
+        name: 'John Doe', // Replace with actual user data from your backend
+        email: 'johndoe@example.com', // Replace with actual user data from your backend
+        // Add more profile data as needed
+      }
     };
   },
   created() {
