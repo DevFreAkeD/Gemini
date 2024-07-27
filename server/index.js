@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv';
 import connectDB from './mongodb/connect.js';
 import authRoutes from './routes/auth.js';
 import chatRoutes from './routes/gemini.js';
+import usersRoutes from './routes/fetchuser.js';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use('/auth', authRoutes);
 app.use('/gemini', chatRoutes);
+app.use('/users', usersRoutes);
 
 app.get('/', async (req, res) => {
     res.send('Hello from Gemini!');
